@@ -1,0 +1,94 @@
+.progress-trail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+    position: relative;
+}
+
+.progress-step-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-grow: 1; /* Ensure the step containers grow to fill the space */
+}
+
+.progress-step-container.above {
+    transform: translateY(-50px);
+    margin-top: 80px; /* Updated with the margin you added */
+}
+
+.progress-step-container.below {
+    transform: translateY(50px);
+}
+
+.progress-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Ensure the step is above the line */
+}
+
+.progress-step:hover {
+    background-color: #0056b3;
+}
+
+.progress-step.active {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.progress-step.chosen {
+    background-color: #28a745;
+}
+
+.progress-step.unchosen {
+    background-color: #000000;
+}
+
+.progress-step.final {
+    padding: 0 20px; /* Add padding to accommodate the text */
+    border-radius: 20px; /* Rounded rectangle */
+    width: auto;
+    height: 40px;
+    white-space: nowrap; /* Ensure text doesn't wrap */
+}
+
+.progress-step.dark-grey {
+    background-color: #595959; /* Darker grey background */
+}
+
+.progress-line {
+    height: 2px;
+    background-color: black; /* Solid black line */
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    transition: all 0.3s ease-in-out;
+    width: calc(100% - 40px); /* Adjust the width to fit between the steps */
+}
+
+.progress-line.above {
+    transform: translateY(50px);
+}
+
+.progress-line.below {
+    transform: translateY(-50px);
+}
+
+.path-suffix {
+    color: red; /* Red color for the suffix */
+}
+
+.button-container .btn {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem; /* Add space between proceed buttons and circles */
+}
